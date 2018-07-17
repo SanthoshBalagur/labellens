@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Label Lens" />
+    <meta name="keywords" content="label,labellens,lens,snackexperts,food,foodlabel,snacks,snack,snacklabel,labels,project,awareness"
+    />
+    <meta name="author" content="chibi_dhanaraj" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="/templateLogReg/week/js/main.js"></script>
+
+</head>
+
+<body>
+    <header role="banner" id="fh5co-header">
+        <div class="fluid-container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <!-- Mobile Toggle Menu Button -->
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                        aria-controls="navbar">
+                        <i></i>
+                    </a>
+                    <a class="navbar-brand" href="/" style="color: #61d8b0">
+                        <span>LABEL </span>lens</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="#" data-nav-section="home">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#fh5co-explore" data-nav-section="about">
+                                <span>About</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#fh5co-pricing" data-nav-section="overview">
+                                <span>Overview</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#weeks" data-nav-section="timeline">
+                                <span>Products</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#ingr" data-nav-section="ingredients">
+                                <span>Ingredients</span>
+                            </a>
+                        </li>
+                        <li class="call-to-action">
+                            <a href="/#fh5co-footer" data-nav-section="footer">
+                                <span>Sign up</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <h3 class="text-muted">Project name</h3>
+    <nav>
+        <br>
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="/week/week1">Week 1</a>
+            </li>
+            <li>
+                <a href="/week/week2">Week 2</a>
+            </li>
+            <li>
+                <a href="/week/week3">Week 3</a>
+            </li>
+            <li>
+                <a href="/week/week4">Week 4</a>
+            </li>
+            <li>
+                <a href="/week/week5">Week 5</a>
+            </li>
+            <li>
+                <a href="/week/week6">Week 6</a>
+            </li>
+            <li>
+                <a href="/week/week7">Week 7</a>
+            </li>
+            <li>
+                <a href="/week/week8">Week 8</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <br>
+    <br>
+
+    <div class="row text-center">
+
+        <h1>Products Purchased in
+            <%=products[0].week%>
+        </h1>
+        <h4>Click on a product to see its label</h4>
+        <div class="product-list">
+            <div class="row">
+                <% for(var i=0; i < products.length; i+=2) { %>
+
+                    <article class="col-sm-6">
+                        <div class="holder">
+                            <p>
+                                <a href="/product/<%= products[i].name%>">
+                                    <%= products[i].name %>
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+                    <%if(products[i+1]){ %>
+                        <article class="col-sm-6">
+                            <div class="holder">
+                                <p>
+                                    <a href="/product/<%= products[i+1].name%>">
+                                        <%= products[i+1].name %>
+                                    </a>
+                                </p>
+
+
+                            </div>
+                        </article>
+                        <%}%>
+                            <% } %>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var url = window.location;
+            $('ul.nav a[href="' + url + '"]').parent().addClass('active');
+            $('ul.nav a').filter(function () {
+                return this.href == url;
+            }).parent().addClass('active');
+        });
+    </script>
+</body>
+
+</html>

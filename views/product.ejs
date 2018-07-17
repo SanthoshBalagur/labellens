@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+   
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <header role="banner" id="fh5co-header">
+            <div class="fluid-container">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <!-- Mobile Toggle Menu Button -->
+                        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                        <a class="navbar-brand" href="/" style="color: #61d8b0"><span>LABEL </span>lens</a> 
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+                            <li><a href="/#fh5co-explore" data-nav-section="about"><span>About</span></a></li>
+                            <li><a href="/#fh5co-pricing" data-nav-section="overview"><span>Overview</span></a></li>
+                            <li><a href="/#weeks" data-nav-section="timeline"><span>Products</span></a></li>
+                            <li><a href="/#ingr" data-nav-section="ingredients"><span>Ingredients</span></a></li>
+                            <li class="call-to-action"><a href="javascript:history.back()"><span>Close</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+          </div>
+        </header>
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <br>
+    <br>
+  
+    <div style="width:auto;height:auto;overflow: auto;position:relative;"><div class="containbox">
+        <div class="columns">
+            <div class="col col-1">
+                    <%if(product[0].brand){ %>  
+                        <div class="block">
+                            <h3>Brand Name</h3>
+                            <div class="holder">
+                                    <div class="icon">
+                                            <img src="img/brand.png" width="65" height="64" alt="image description">
+                                        </div>
+                                <div class="text" id="brand_name"><%=product[0].brand %></div>
+                            </div>
+                        </div>
+                        <%}%>
+                    <%if(product[0].product){ %>  
+                    <div class="block">
+                            <div class="ingredients">
+                                    <h3>Product Name</h3>
+                                    <div class="holder">
+                                            <div class="icon">
+                                                    <img src="img/product.png" width="65" height="64" alt="image description">
+                                                </div>
+                                        <div class="text" id="product"><%=product[0].product %></div>
+                                    </div>
+                            </div>
+                    </div>
+                    <%}%>
+                 
+                <%if(product[0].company){ %>  
+                <div class="block">
+                    <h3>Registered Company</h3>
+                    <div class="holder">
+                            <div class="icon">
+                                    <img src="img/company.png" width="65" height="64" alt="image description">
+                                </div>
+                        <div class="text"><%=product[0].company %></div>
+                    </div>
+                </div>
+                <%}%>
+
+                <%if(product[0].location){ %>
+                    <div class="block">
+                            <h3>Manufactured At</h3>
+                            <div class="holder">
+                                    <div class="icon">
+                                            <img src="img/location.png" width="64" height="64" alt="image description">
+                                     </div>
+                                <div class="text" id="shelf"><%=product[0].location %></div>
+                            </div>
+                    </div>   
+                    <%}%>                
+
+               
+                <%if(product[0].nw){ %> 
+                <div class="block block-has" style="display: none">
+                        <h3>Net Weight</h3>
+                        <div class="holder">
+                                <div class="icon">
+                                        <img src="img/nw.png" width="64" height="64" alt="image description">
+                                 </div>
+                            <div class="text">
+                                <span class="large" id="nw"><%=product[0].nw %></span>
+                            </div>
+                        </div>
+                    </div>   
+                <%}%>  
+                <%if(product[0].expiry_days){ %>
+                    <div class="block">
+                            <h3>Shelf Life</h3>
+                            <div class="holder">
+                                    <div class="icon">
+                                            <img src="img/expiry.png" width="64" height="64" alt="image description">
+                                     </div>
+                                <div class="text" id="shelf"><%=product[0].expiry_days %> Days</div>
+                            </div>
+                    </div>
+                    <%}%>                          
+            </div>
+            <div class="col col-2">   
+                    <%if(product[0].type){ %> 
+                        <div class="block">
+                            <h3>Food Type</h3>
+                            <div class="holder">
+                                    <div class="icon">
+                                            <img src="img/veg.jpg" width="74" height="74" alt="image description">
+                                        </div>
+                                <div class="text">
+                                    <span class="large"><%=product[0].type %></span>
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+                        <%if(product[0].category){ %> 
+                        <div class="block block-has">
+                            <h3>Snack Category</h3>
+                            <div class="holder">
+                                    <div class="icon">
+                                            <img src="img/category.jpg" width="100" height="85" alt="image description">
+                                     </div>
+                                <div class="text">
+                                    <span class="large" id="category"><%=product[0].category %></span>
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+                    <%if(product[0].ingr){ %>   
+                    <div class="block">
+                        <div class="ingredients">
+                            <h3>Ingredients </h3>
+                            <div class="gholder"><%=product[0].ingr %></div>
+                        </div>
+                    </div>
+                    <%}%>
+                    <%if(product[0].food_color){ %> 
+                    <div class="block">
+                            <h3>Food Colour</h3>
+                            <div class="holder">
+                            <div class="icon">
+                                    <img src="img/color.jpg" width="75" height="75" alt="image description">
+                             </div>
+                            <div class="text"><%=product[0].food_color %></div>
+                        </div>
+                    </div>
+                    <%}%>
+                    <%if(product[0].flavor){ %> 
+                    <div class="block">
+                            <h3>Food Flavour</h3>
+                            <div class="holder">
+                                    <div class="icon">
+                                            <img src="img/flavor.png" width="75" height="64" alt="image description">
+                                     </div>
+                            <div class="text"><%=product[0].flavor %></div>
+                        </div>
+                    </div>
+                    <%}%>
+                    
+                                               
+                </div>
+            <div class="col col-3 auto">
+                    <div class="columns auto">
+                    <%if(product[0].allergen){ %> 
+                        <div class="block ">
+                                <h3>Allergen</h3>
+                                <div class="holder">
+                                <div class="icon">
+                                        <img src="img/allergen.png" width="64" height="64" alt="image description">   
+                                 </div>
+                                <div class="text" id="allergen"><%=product[0].allergen %></div>
+                            </div>
+                        </div>
+                        <%}%>
+                <div class="block">
+                    <h3>Nutritional Information</h3>
+                    <table class="popup-table">
+                        <tbody>
+                            <%if(product[0].energy){ %> 
+                              <tr>
+                            <td class="td1">Energy</td>
+                            <td class="td2"><%=product[0].energy%></td>
+                               <%}%>
+                              
+
+                            <%if(product[0].energyfat){ %> 
+                              <tr>
+                            <td class="td1">Energy from Fat</td>
+                            <td class="td2"><%=product[0].energyfat%></td>
+                               <%}%>
+
+                                <%if(product[0].protein){ %> 
+                              <tr>
+                            <td class="td1">Protein</td>
+                            <td class="td2"><%=product[0].protein%></td>
+                               <%}%>
+
+                        <%if(product[0].carbs){ %>
+                        <tr>
+                            <td class="td1">Carbohydrate</td>
+                            <td class="td2" id="protein_per_serving"><%=product[0].carbs%></td>
+                            
+                        </tr>
+                        <%}%>
+
+                        <%if(product[0].sugar){ %> 
+                              <tr>
+                            <td class="td1">Sugar</td>
+                            <td class="td2"><%=product[0].sugar%></td>
+                        <%}%>
+
+
+                        <%if(product[0].sugars){ %> 
+                              <tr>
+                            <td class="td1">Sugars-Sucrose</td>
+                            <td class="td2"><%=product[0].sugars%></td>
+                        <%}%>
+
+                      <%if(product[0].fat){ %> 
+                              <tr>
+                            <td class="td1">Total Fat</td>
+                            <td class="td2"><%=product[0].fat%></td>
+                        <%}%>
+
+                        
+                        <%if(product[0].st){ %> 
+                         <tr>
+                            <td class="td1">Saturated Fat</td>
+                            <td class="td2" id="protein_per_serving"><%=product[0].st%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                        <%if(product[0].tf){ %> 
+                         <tr>
+                            <td class="td1">Trans Fat</td>
+                            <td class="td2" id="protein_per_serving"><%=product[0].tf%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].mufa){ %> 
+                         <tr>
+                            <td class="td1">MonoUnsaturated Fatty Acid</td>
+                            <td class="td2"><%=product[0].mufa%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                        <%if(product[0].pufa){ %> 
+                         <tr>
+                            <td class="td1">PolyUnsaturated Fatty Acid</td>
+                            <td class="td2"><%=product[0].pufa%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].maltilol){ %> 
+                         <tr>
+                            <td class="td1">Maltilol</td>
+                            <td class="td2"><%=product[0].maltilol%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].sodium){ %> 
+                         <tr>
+                            <td class="td1">Sodium</td>
+                            <td class="td2"><%=product[0].sodium%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                       <%if(product[0].fibre){ %> 
+                         <tr>
+                            <td class="td1">Fibre</td>
+                            <td class="td2"><%=product[0].fibre%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].cf){ %> 
+                         <tr>
+                            <td class="td1">Crude Fiber</td>
+                            <td class="td2"><%=product[0].cf%></td> 
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].df){ %> 
+                         <tr>
+                            <td class="td1">Dietary Fiber</td>
+                            <td class="td2"><%=product[0].df%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].cholesterol){ %> 
+                         <tr>
+                            <td class="td1">Cholesterol</td>
+                            <td class="td2"><%=product[0].cholesterol%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].salt){ %> 
+                         <tr>
+                            <td class="td1">Salt</td>
+                            <td class="td2"><%=product[0].salt%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].iron){ %> 
+                         <tr>
+                            <td class="td1">Iron</td>
+                            <td class="td2"><%=product[0].iron%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].potassium){ %> 
+                         <tr>
+                            <td class="td1">Potassium</td>
+                            <td class="td2"><%=product[0].potassium%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                           <%if(product[0].calcium){ %> 
+                         <tr>
+                            <td class="td1">Calcium</td>
+                            <td class="td2"><%=product[0].calcium%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].iodine){ %> 
+                         <tr>
+                            <td class="td1">Iodine</td>
+                            <td class="td2"><%=product[0].iodine%></td>
+                            
+                        </tr>
+                         <%}%>
+                        
+                         <%if(product[0].vita){ %> 
+                         <tr>
+                            <td class="td1">Vitamin A</td>
+                            <td class="td2"><%=product[0].vita%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].vitab1){ %> 
+                         <tr>
+                            <td class="td1">Vitamin B1</td>
+                            <td class="td2"><%=product[0].vitab1%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].vitab2){ %> 
+                         <tr>
+                            <td class="td1">Vitamin B2</td>
+                            <td class="td2"><%=product[0].vitab2%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].vitab3){ %> 
+                         <tr>
+                            <td class="td1">Vitamin B3</td>
+                            <td class="td2"><%=product[0].vitab3%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].vitab5){ %> 
+                         <tr>
+                            <td class="td1">Vitamin B5</td>
+                            <td class="td2"><%=product[0].vitab5%></td>
+                            
+                        </tr>
+                         <%}%>
+
+
+                         <%if(product[0].vitab6){ %> 
+                         <tr>
+                            <td class="td1">Vitamin B6</td>
+                            <td class="td2"><%=product[0].vitab6%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].vitab7){ %> 
+                         <tr>
+                            <td class="td1">Vitamin B7</td>
+                            <td class="td2"><%=product[0].vitab7%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].vitab12){ %> 
+                         <tr>
+                            <td class="td1">Vitamin B12</td>
+                            <td class="td2"><%=product[0].vitab12%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].vitac){ %> 
+                         <tr>
+                            <td class="td1">Vitamin C</td>
+                            <td class="td2"><%=product[0].vitac%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].vitd){ %> 
+                         <tr>
+                            <td class="td1">Vitamin D</td>
+                            <td class="td2"><%=product[0].vitd%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                          <%if(product[0].vite){ %> 
+                         <tr>
+                            <td class="td1">Vitamin E</td>
+                            <td class="td2"><%=product[0].vite%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].folic){ %> 
+                         <tr>
+                            <td class="td1">Folic</td>
+                            <td class="td2"><%=product[0].folic%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].folate){ %> 
+                         <tr>
+                            <td class="td1">Folate</td>
+                            <td class="td2"><%=product[0].folate%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].zinc){ %> 
+                         <tr>
+                            <td class="td1">Zinc</td>
+                            <td class="td2"><%=product[0].zinc%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].chromium){ %> 
+                         <tr>
+                            <td class="td1">Chromium</td>
+                            <td class="td2"><%=product[0].chromium%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].selenium){ %> 
+                         <tr>
+                            <td class="td1">Selenium</td>
+                            <td class="td2"><%=product[0].selenium%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].magnesium){ %> 
+                         <tr>
+                            <td class="td1">Magnesium</td>
+                            <td class="td2"><%=product[0].magnesium%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].phosphorus){ %> 
+                         <tr>
+                            <td class="td1">Phosphorus</td>
+                            <td class="td2"><%=product[0].phosphorus%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].Moisture){ %> 
+                         <tr>
+                            <td class="td1">Moisture</td>
+                            <td class="td2"><%=product[0].Moisture%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].Pantothenate){ %> 
+                         <tr>
+                            <td class="td1">Pantothenate</td>
+                            <td class="td2"><%=product[0].Pantothenate%></td>
+                            
+                        </tr>
+                         <%}%>
+
+                         <%if(product[0].Polyols){ %> 
+                         <tr>
+                            <td class="td1">Polyols</td>
+                            <td class="td2"><%=product[0].Polyols%></td>
+                            
+                        </tr>
+                         <%}%>
+                    </tbody></table>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+    </div></div>
+  </body>
+</html>
+
+
+                  
