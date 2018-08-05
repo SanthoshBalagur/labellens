@@ -11,7 +11,7 @@ var mongo = require('mongodb');
 //connect to MongoDB
 //mongoose.connect('mongodb://127.0.0.1/test');
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://labellens:label@123@ds035603.mlab.com:35603/labeldb";
+var url = "mongodb://label:label123@ds035603.mlab.com:35603/labeldb";
 
 
 MongoClient.connect(url, function(err, db) {
