@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path    = require('path');
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/test";
+var url = ""mongodb://label:label123@ds035603.mlab.com:35603/labeldb"";
 
 
 
