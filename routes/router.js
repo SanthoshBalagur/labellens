@@ -41,24 +41,24 @@ router.route('/product/:id').get(function (req, res, next) {
   var productdetails;
   console.log(id);
 var productdetails = MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
+  if (err) {throw err;
+  res.sendStatus(404);
+  }
   var dbo = db.db("test");
   var query = { name: id };
 
   dbo.collection("product").find(query).toArray(function(err, result) {
-    if (err) throw err;
+    if (err) {throw err;res.sendStatus(404);}
    console.log(result);
- 
-return res.render('product',{product:result});
+
+   return res.render('product',{product:result});
     db.close();
   });
 
 });
-console.log(productdetails);
 
 })
 
 
 
 module.exports = router;
-
